@@ -4,6 +4,6 @@ geopy==2.3.0
 pydantic==1.10.7
 PyJWT==1.7.1
 pymongo==4.3.3
-python_bcrypt==0.3.2
+bcrypt
 Requests==2.31.0
 uvicorn
