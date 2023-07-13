@@ -35,7 +35,7 @@ export const Weather = () => {
       headers: {
         "Content-type": "application/json",
       }
-    })
+    }).then(() => window.location.reload())
 
   }
   if (current != null && hour != null && current != 'Город не найден' && hour != 'Город не найден') {

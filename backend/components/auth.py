@@ -51,6 +51,6 @@ def users():
 @app.post("/change_city")
 def change_city(city, res: Response, req: Request):
   payload = token.tokens(res, req)
-  res.set_cookie(key="access_token_cookie", value=token.create_access_token(str(payload['user_id']), city))
-  res.set_cookie(key="refresh_token_cookie", value=token.create_refresh_token())
+  res.set_cookie(key="access_token_cookie", value=token.create_access_token(str(payload['user_id']), city), samesite="none", secure=True, max_age=900, expires=ACCESS_TOKEN_EXPIRE_DELTA)
+  res.set_cookie(key="refresh_token_cookie", value=token.create_refresh_token(), samesite="none", secure=True, max_age=900, expires=REFRESH_TOKEN_EXPIRE_DELTA)
   return "City was changed"
