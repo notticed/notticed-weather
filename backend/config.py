@@ -14,7 +14,7 @@ API_KEY = "a8af76f21f133929f58bb3d5bab2a0d6"
 
 # cors policy
 
-@app.middleware("http")
+@app.middleware("https")
 async def add_cors_headers(request, call_next):
     response = await call_next(request)
     response.headers["Access-Control-Allow-Origin"] = "https://notticed-weather.vercel.app/"
