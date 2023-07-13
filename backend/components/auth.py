@@ -18,15 +18,15 @@ def login(user: User, res: Response, req: Request):
   if payload != None:
     if check_hashing(user.password, payload['password']):
       
-      res.set_cookie(key="access_token_cookie", value=token.create_access_token(str(payload['_id']), coords()))
-      res.set_cookie(key="refresh_token_cookie", value=token.create_refresh_token())
+      res.set_cookie(key="access_token_cookie", value=token.create_access_token(str(payload['_id']), coords()), samesite="none", secure=True, max_age=900, expires=ACCESS_TOKEN_EXPIRE_DELTA)
+      res.set_cookie(key="refresh_token_cookie", value=token.create_refresh_token(), samesite="none", secure=True, max_age=900, expires=REFRESH_TOKEN_EXPIRE_DELTA)
       return 'OK'
     else:
       raise HTTPException(status_code=401, detail='Password is incorrect')
   users_weather.insert_one(user_payload(user.email, user.password))
   payload = users_weather.find_one({'email': user.email})
-  res.set_cookie(key="access_token_cookie", value=token.create_access_token(str(payload['_id']), coords()))
-  res.set_cookie(key="refresh_token_cookie", value=token.create_refresh_token())
+  res.set_cookie(key="access_token_cookie", value=token.create_access_token(str(payload['_id']), coords()), samesite="none", secure=True, max_age=900, expires=ACCESS_TOKEN_EXPIRE_DELTA)
+  res.set_cookie(key="refresh_token_cookie", value=token.create_refresh_token(), samesite="none", secure=True, max_age=900, expires=REFRESH_TOKEN_EXPIRE_DELTA)
   return 'User created'
 
 @app.get('/api/logout', tags=['auth'])
