@@ -41,14 +41,14 @@ class Token():
       'user_id': user_id,
       'city': city,
       'exp': time.time() + ACCESS_TOKEN_EXPIRE_DELTA
-    }, SECRET_KEY, algorithm=ALGORITHM)
+    }, SECRET_KEY, algorithm=ALGORITHM).decode('utf-8')
     return access_token
   
   # return refresh_token
   def create_refresh_token(self):
     refresh_token = jwt.encode({
       'exp': time.time() + REFRESH_TOKEN_EXPIRE_DELTA
-    }, SECRET_KEY, algorithm=ALGORITHM)
+    }, SECRET_KEY, algorithm=ALGORITHM).decode('utf-8')
     return refresh_token
   
   def tokenRefresh(self, refresh_token, res):
