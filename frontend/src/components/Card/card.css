@@ -1,0 +1,28 @@
+.card {
+  width: 220px;
+  height: 210px;
+  background-color: #fff;
+  border-radius:10px;
+  margin-right: 10px;
+}
+
+.temp2 {
+  font-weight: 500;
+  font-size: 30px;
+  margin: 5px;
+  color: #1F88DF;
+}
+
+.date {
+  margin: 5px;
+}
+
+.desc {
+  margin: 5px;
+  color: #DEA09A;
+  font-size: 20px;
+}
+
+.info {
+  margin: 5px;
+}

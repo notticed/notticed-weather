@@ -1,0 +1,57 @@
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.logo {
+  display: block;
+  cursor: pointer;
+  font-weight: 800;
+  color: #DEA09A;
+  font-size: 33px;
+  margin-right: 30px;
+}
+
+.input_change {
+  width: 300px;
+  padding: 8px 10px 10px 45px;
+  outline: none;
+  font-size: 18px;
+  font-family: 'JetBrains Mono';
+  font-weight: 500;
+  color: #1F88DF;
+  border: 1px solid #1F88DF;
+  background: url('../../loupe.svg') no-repeat scroll 7px 4px;
+}
+
+.cards {
+  display: flex;
+  
+}
+
+.city {
+  font-weight: 800;
+  color: #1F88DF;
+  margin: 0;
+}
+
+.temp {
+  font-weight: 500;
+  margin: 4px 0px;
+  color: #1F88DF;
+}
+
+.desc2 {
+  margin: 4px 0px;
+  color: #DEA09A;
+  font-size: 25px;
+}
+
+.info2 {
+  font-weight: 400;
+  margin: 0;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  color: #DEA09A;
+}
