@@ -11,7 +11,7 @@ export const Main = () => {
     e.preventDefault()
 
     setLoading(true)
-    fetch('http://localhost:8000/login', {
+    fetch('https://weather-backend-yiwj.onrender.com/login', {
       method: 'POST',
       credentials: 'include',
       headers: {

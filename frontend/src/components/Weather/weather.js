@@ -10,7 +10,7 @@ export const Weather = () => {
   const [city, setCity] = useState({city: ''})
   useEffect(() => {
     setLoading(true)
-    fetch('http://localhost:8000/weather_current', {'credentials': 'include', 'method': 'GET'})
+    fetch('https://weather-backend-yiwj.onrender.com/weather_current', {'credentials': 'include', 'method': 'GET'})
       .then(res => res.json())
       .then(current => {
         setCurrent(current)
@@ -19,7 +19,7 @@ export const Weather = () => {
   }, []);
   useEffect(() => {
     setLoading(true)
-    fetch('http://localhost:8000/weather_3d', {'credentials': 'include', 'method': 'GET'})
+    fetch('https://weather-backend-yiwj.onrender.com/weather_3d', {'credentials': 'include', 'method': 'GET'})
       .then(res => res.json())
       .then(hour => {
         setHour(hour)
@@ -29,7 +29,7 @@ export const Weather = () => {
   const submitHandler = e => {
     e.preventDefault()
 
-    fetch(`http://localhost:8000/change_city?city=${city.city}`, {
+    fetch(`https://weather-backend-yiwj.onrender.com/change_city?city=${city.city}`, {
       method: 'POST',
       credentials: 'include',
       headers: {
